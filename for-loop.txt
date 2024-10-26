@@ -1,0 +1,34 @@
+
+$a= Read-Host "Enter the service names"
+$b= $a.split(",")
+for ($i=0; $i -lt $b.Count; $i ++ )
+{
+get-service -Name $b[$i] | Select-Object Name, status
+}
+
+$a= Read-Host "Enter the service names" = vss,winrm
+
+$a --> vss,winrm
+
+$b= $a.split(",")
+
+
+$b
+vss  	$b[0]
+winrm	$b[1]
+
+$b.count -> 2
+
+
+for ($i=0; $i -lt 2; $i ++ )
+{
+get-service -Name $b[$i] | Select-Object Name, status
+}
+
+$i=0, $b[0]--> VSS   	
+
+get-service -Name vss | Select-Object Name, status
+
+$i=1, $b[1]--> winrm
+
+get-service -Name winrm | Select-Object Name, status
